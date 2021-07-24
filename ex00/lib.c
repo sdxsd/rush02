@@ -1,6 +1,6 @@
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -55,7 +55,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(long nb)
 {
 	if (nb < 0)
 	{
@@ -73,6 +73,7 @@ void	ft_putnbr(int nb)
 	}
 }
 
+/* TODO: whitespace /t/v etc? */
 long ft_atoi(const char *str)
 {
     long	iterator;
