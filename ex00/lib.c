@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 char	*ft_strcpy(char *dest, const char *src)
 {
 	unsigned int	i;
