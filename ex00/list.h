@@ -1,14 +1,15 @@
 #ifndef LIST_H
-#define LIST_H
+# define LIST_H
 
-typedef struct	s_list
+typedef struct s_list
 {
-	struct	s_list	*next;
+	struct s_list	*next;
 	long			key;
 	char			*value;
-} t_list;
+}				t_list;
 
-/* adds new elem with key and value to the list. if li is null, creates the list */
+/* adds new elem with key and value to the list.
+ * if li is null, creates the list */
 void	li_create_append(t_list **li, long key, char *value);
 
 /* frees the entire list, including the value strings */
