@@ -73,12 +73,12 @@ void	ft_putnbr(int nb)
 	}
 }
 
-int ft_atoi(char *str)
+long ft_atoi(const char *str)
 {
-    int iterator;
-    int minus_count;
-    int plus_count;
-    int nbr;
+    long	iterator;
+    long	minus_count;
+    long	plus_count;
+    long	nbr;
 
     nbr = 0;
     iterator = 0;
@@ -86,7 +86,6 @@ int ft_atoi(char *str)
     plus_count = 0;
     while (str[iterator] != '\0')
     {
-
         if (str[iterator] == ' ')
             continue;
         if (str[iterator] == '-')
@@ -96,15 +95,13 @@ int ft_atoi(char *str)
         else if (str[iterator] >= '0' && str[iterator] <= '9')
         {
             nbr *= 10;
-            nbr += (int)str[iterator] - '0';
+            nbr += (long)str[iterator] - '0';
         }
         else
             break;
         ++iterator;
     }
-    if (odd_even(minus_count) == 1)
-        nbr = nbr - (nbr * 2);
-    printf("%d\n", nbr);
-
+    if (minus_count % 2 == 1)
+        nbr = -nbr;
     return (nbr);
 }
