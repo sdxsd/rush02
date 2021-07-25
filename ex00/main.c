@@ -3,7 +3,7 @@
 #include "lib.h"
 #include "ft_atoi.h"
 
-long g_num_to_check;
+long	g_num_to_check;
 
 int	ft_check(char *str)
 {
@@ -41,8 +41,9 @@ void	print_if_eq(t_list *li)
 int	main(int argc, char **argv)
 {
 	long	tmp;
-	t_list	*li	= (t_list *)0;
+	t_list	*li;	
 
+	li = (t_list *)0;
 	if (argc != 2)
 	{
 		write(1, "error\n", 6);
@@ -60,9 +61,7 @@ int	main(int argc, char **argv)
 		li_foreach(li, &print_if_eq);
 	}
 	else
-	{
 		li_foreach(li, &print_if_eq);
-	}
 	ft_putchar('\n');
 	return (0);
 }
