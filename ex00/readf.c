@@ -28,7 +28,8 @@ int get_entry(char *file_path, int lines_to_skip)
     int iterator;
     int iterator2;
     int nl_count;
-
+    
+    nl_count = 0;
     iterator = 0;
     file = open(file_path, O_RDONLY);
     while ((read(file, &one_char, 1)) && one_char != '\0')
