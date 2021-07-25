@@ -22,31 +22,39 @@ int fgetline()
 int get_entry(char *file_path, int lines_to_skip)
 {
     char char_buf[4096];
+    char entry_buf[4096];
     char one_char;
     int file;
     int iterator;
+    int iterator2;
     int nl_count;
 
     iterator = 0;
     file = open(file_path, O_RDONLY);
-    while ((read(file, &one_char, 1)))
+    while ((read(file, &one_char, 1)) && one_char != '\0')
     {
-        if (one_char == '\n')
-            nl_count++;
-        else if (nl_count == lines_to_skip)
-        {
-            char_buf[iterator] = one_char;
-        }
+        char_buf[iterator] = one_char;
         ++iterator;
     }
-    char_buf[iterator++] = '\0';
-    ft_putstr(char_buf);
-    ft_putnbr(ft_atoi(char_buf));
+    iterator = 0;
+    iterator2 = 0;
+    while (iterator < 4096)
+    {
+        if (char_buf[iterator] == '\n')
+            ++nl_count;
+        else if (nl_count == lines_to_skip)
+            entry_buf[iterator2] = char_buf[iterator];
+        iterator++;
+
+    }
+    char_buf[iterator] = '\0';
+    ft_putstr(entry_buf);
+    close (file);
     return(0);
 }
 
 int main()
 {
-    fgetline();
-    get_entry("numbers.dict", 5);
+    //fgetline();
+    get_entry("numbers.dict", 4);
 }
