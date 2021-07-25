@@ -1,3 +1,4 @@
 norminette
 illegal functions
 remove *_example.c, this file and .DS_Store and such!
+also check numbers.dict, should we turn it in?
