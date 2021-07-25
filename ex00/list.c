@@ -30,7 +30,6 @@ void	li_create_append(t_list **li, long key, char *value)
 }
 
 /* frees the entire list, including the value strings. */
-/* TODO: fix*/
 void	li_free(t_list *li)
 {
 	t_list	*cur;
