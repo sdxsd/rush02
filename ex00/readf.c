@@ -59,7 +59,7 @@ long	m_parse_line(char *line, t_list **list)
 	value = malloc(len - i);
 	ft_strcpy(value, (line + i));
 	li_create_append(list, key, value);
-	return key;
+	return (key);
 }
 
 /* reads a line of at most BUF_SIZE in length, returns char* 
