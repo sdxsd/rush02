@@ -47,11 +47,6 @@ long	m_parse_line(char *line, t_list **list)
 	int		i;
 
 	len = ft_strlen(line);
-	if (len <= 3)
-	{
-		return (0);
-	}
-	//printf("%s\n", line);
 	key = ft_atoi(line);
 	i = 0;
 	while (line[i] != ':')
