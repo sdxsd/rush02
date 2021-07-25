@@ -37,9 +37,27 @@ void	print_if_eq(t_list *li)
 	}
 }
 
-int	main(int argc, char **argv)
+void	run(t_list **li)
 {
 	long	tmp;
+
+	tmp = g_num_to_check;
+	parse_file("numbers.dict", li);
+	if (g_num_to_check >= 20 && g_num_to_check % 10 != 0)
+	{
+		g_num_to_check = (tmp / 10) * 10;
+		li_foreach(*li, &print_if_eq);
+		ft_putchar(' ');
+		g_num_to_check = tmp % 10;
+		li_foreach(*li, &print_if_eq);
+	}
+	else
+		li_foreach(*li, &print_if_eq);
+	ft_putchar('\n');
+}
+
+int	main(int argc, char **argv)
+{
 	t_list	*li;	
 
 	li = (t_list *)0;
@@ -50,18 +68,7 @@ int	main(int argc, char **argv)
 	}
 	ft_check(argv[1]);
 	g_num_to_check = ft_atoi(argv[1]);
-	tmp = g_num_to_check;
-	parse_file("numbers.dict", &li);
-	if (g_num_to_check >= 20 && g_num_to_check % 10 != 0)
-	{
-		g_num_to_check = (tmp / 10) * 10;
-		li_foreach(li, &print_if_eq);
-		ft_putchar(' ');
-		g_num_to_check = tmp % 10;
-		li_foreach(li, &print_if_eq);
-	}
-	else
-		li_foreach(li, &print_if_eq);
-	ft_putchar('\n');
+	run(&li);
+	li_free(li);
 	return (0);
 }
