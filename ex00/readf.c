@@ -52,6 +52,7 @@ long	m_parse_line(char *line, t_list **list)
 		i++;
 	}
 	i++;
+	i++;
 	value = malloc(len - i);
 	ft_strcpy(value, (line + i));
 	li_create_append(list, key, value);
