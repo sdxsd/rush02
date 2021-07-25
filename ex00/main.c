@@ -14,14 +14,14 @@ int	ft_check(char *str)
 	{
 		if (!(*str >= '0' && *str <= '9'))
 		{
-			write(1, "error\n", 6);
+			write(1, "Error\n", 6);
 			return (0);
 		}
 		str++;
 	}
 	if (len > 37)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error\n", 6);
 		return (0);
 	}
 	return (1);
@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 	li = (t_list *)0;
 	if (argc != 2)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error\n", 6);
 		return (1);
 	}
 	ft_check(argv[1]);
