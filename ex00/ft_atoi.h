@@ -8,6 +8,7 @@ unsigned int	check_whitespace(char *str)
 		|| str[i] == '\n'
 		|| str[i] == '\r'
 		|| str[i] == '\t'
+		|| str[i] == '\f'
 		|| str[i] == '\v')
 	{
 		i++;

@@ -1,5 +1,8 @@
 #include <unistd.h>
 
+#ifndef LIB_H
+# define LIB_H
+
 char	*ft_strcpy(char *dest, const char *src)
 {
 	unsigned int	i;
@@ -74,4 +77,7 @@ void	ft_putnbr(long nb)
 		ft_putchar((nb % 10) + '0');
 	}
 }
+
+#endif /* LIB_H */
+
 
