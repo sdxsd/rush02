@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "list.h"
-//#include "lib.h"
-//#include "ft_atoi.h"
+#include "lib.h"
+#include "ft_atoi.h"
 
 long g_num_to_check;
 
