@@ -4,7 +4,7 @@ fclean: all
 all: program clean
 
 program:
-	clang -Wall -Wextra -Werror *.c
+	clang -Wall -Wextra -Werror *.c -o rush-02
 
 clean:
 	rm *.o
