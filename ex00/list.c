@@ -2,9 +2,6 @@
 
 #include <stdlib.h>
 
-/* TODO: REMOVE STDIO HEADER, REMOVE/PORT LI_DISPLAY */
-#include <stdio.h>
-
 /* adds new elem with key and value to the list.
  * If li is null, creates the list. Notice that t_list is 
  * a double pointer, because othewise you wouldn't be able
@@ -60,17 +57,4 @@ void	li_foreach(t_list *li, void (*func)(t_list *li))
 		func(cur);
 		cur = cur->next;
 	}
-}
-
-/* displays individual list  element. cannot be called outside
- * of this file because it's not included in list.h */
-void	li_display_element(t_list *li)
-{
-	printf("%p: %ld: %s\n", li, li->key, li->value);
-}
-
-/* prints list to stdout */
-void	li_display(t_list *li)
-{
-	li_foreach(li, &li_display_element);
 }
