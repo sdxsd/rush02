@@ -1,10 +1,12 @@
-fclean: all
+fclean: clean all
 	echo "Cleaned and compiled, we love cats."
 
-all: program clean 
+all: rush-02
 
-program:
-	clang -Wall -Wextra -Werror *.c -o rush-02
+rush-02:
+	clang -Wall -Wextra -Werror *.c -o $@
+
+.PHONY: clean
 
 clean:
-	rm rush-02
+	rm -f rush-02
