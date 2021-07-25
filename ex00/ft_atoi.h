@@ -1,3 +1,6 @@
+#ifndef FT_ATOI_H
+# define FT_ATOI_H
+
 /* walks over the whitespace, returns offset */
 unsigned int	check_whitespace(char *str)
 {
@@ -64,3 +67,4 @@ long	ft_atoi(char *str)
 		r = -r;
 	return (r);
 }
+#endif
