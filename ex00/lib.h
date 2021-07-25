@@ -78,33 +78,33 @@ void	ft_putnbr(long nb)
 /* TODO: whitespace /t/v etc? */
 long ft_atoi(const char *str)
 {
-    long	iterator;
-    long	minus_count;
-    long	plus_count;
-    long	nbr;
+	long	iterator;
+	long	minus_count;
+	long	plus_count;
+	long	nbr;
 
-    nbr = 0;
-    iterator = 0;
-    minus_count = 0;
-    plus_count = 0;
-    while (str[iterator] != '\0')
-    {
-        if (str[iterator] == ' ')
-            continue;
-        if (str[iterator] == '-')
-            ++minus_count;
-        else if (str[iterator] == '+')
-            ++plus_count;
-        else if (str[iterator] >= '0' && str[iterator] <= '9')
-        {
-            nbr *= 10;
-            nbr += (long)str[iterator] - '0';
-        }
-        else
-            break;
-        ++iterator;
-    }
-    if (minus_count % 2 == 1)
-        nbr = -nbr;
-    return (nbr);
+	nbr = 0;
+	iterator = 0;
+	minus_count = 0;
+	plus_count = 0;
+	while (str[iterator] != '\0')
+	{
+		if (str[iterator] == ' ')
+			continue ;
+		if (str[iterator] == '-')
+			++minus_count;
+		else if (str[iterator] == '+')
+			++plus_count;
+		else if (str[iterator] >= '0' && str[iterator] <= '9')
+		{
+			nbr *= 10;
+			nbr += (long)str[iterator] - '0';
+		}
+		else
+			break ;
+		++iterator;
+	}
+	if (minus_count % 2 == 1)
+		nbr = -nbr;
+	return (nbr);
 }
