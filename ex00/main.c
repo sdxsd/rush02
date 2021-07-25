@@ -34,7 +34,6 @@ void	print_if_eq(t_list *li)
 	if (li->key == g_num_to_check)
 	{
 		ft_putstr(li->value);
-		ft_putchar(' ');
 	}
 }
 
@@ -57,6 +56,7 @@ int	main(int argc, char **argv)
 	{
 		g_num_to_check = (tmp / 10) * 10;
 		li_foreach(li, &print_if_eq);
+		ft_putchar(' ');
 		g_num_to_check = tmp % 10;
 		li_foreach(li, &print_if_eq);
 	}
