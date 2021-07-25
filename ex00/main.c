@@ -1,4 +1,6 @@
 #include <unistd.h>
+#include "list.h"
+
 int	ft_check_len(char *str)
 {
 	int	i;
@@ -34,12 +36,19 @@ int	ft_check(char *str)
 	return (1);
 }
 
+int	parse_file(char	*filename, t_list **list);
+
 int	main(int argc, char **argv)
 {
+	t_list	*li	= (t_list *)0;
+
 	if (argc != 2)
 	{
 		write(1, "error\n", 6);
 		return (1);
 	}
 	ft_check(argv[1]);
+	parse_file("numbers.dict", &li);
+	li_display(li);
+	return (0);
 }

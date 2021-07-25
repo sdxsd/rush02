@@ -5,8 +5,6 @@
 #include "ft_atoi.h"
 #include "list.h"
 
-#include <stdio.h>
-
 #define BUF_SIZE (4096)
 
 long	m_parse_line(char *line, t_list **list);
@@ -81,15 +79,6 @@ char	*m_getline(int file)
 		}
 		i++;
 	}
-}
-
-
-int main()
-{
-	t_list	*li = (t_list *)0;
-	parse_file("numbers.dict", &li);
-	li_display(li);
-	return (0);
 }
 
 #undef BUF_SIZE
