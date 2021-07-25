@@ -74,6 +74,7 @@ void	ft_putnbr(long nb)
 		ft_putchar((nb % 10) + '0');
 	}
 }
+<<<<<<< HEAD:ex00/lib.h
 
 /* TODO: whitespace /t/v etc? */
 long ft_atoi(const char *str)
@@ -108,3 +109,5 @@ long ft_atoi(const char *str)
 		nbr = -nbr;
 	return (nbr);
 }
+=======
+>>>>>>> b3dd79c63d01053fe53fd9c2fc09c35426645354:ex00/lib.c
